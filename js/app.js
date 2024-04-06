@@ -16,6 +16,10 @@ cardapio.eventos = {
 
     init: () => {
         cardapio.metodos.obterItensCardapio();
+        cardapio.metodos.carregarBotaoLigar();
+        cardapio.metodos.carregarBotaoReserva();
+        cardapio.metodos.carregarBotaoWatsapp();
+        cardapio.metodos.carregarBotaoWatsapp2();
     }
 }
 
@@ -530,9 +534,65 @@ cardapio.metodos = {
     },
 
 
+    //carrega o link do botao reserva
+    carregarBotaoReserva: () => {
+
+        var texto = 'Olá! gostaria de fazer uma *reserva*';
+
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+       $("#btnReserva").attr('href', URL);
+
+    },
+
+
+    //carrega o botao ligar
+    carregarBotaoLigar: () => {
+
+        $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`);
+    },
 
 
 
+    //ABRE OS DEPOIMENTOS
+    abrirDepoimento: (depoimento) => {
+
+        $("#depoimento-1").addClass('hidden');
+        $("#depoimento-2").addClass('hidden');
+        $("#depoimento-3").addClass('hidden');
+
+        $("#btnDepoimento-1").removeClass('active');
+        $("#btnDepoimento-2").removeClass('active');
+        $("#btnDepoimento-3").removeClass('active');
+
+        $("#depoimento-" + depoimento).removeClass('hidden');
+        $("#btnDepoimento-" + depoimento).addClass('active');
+    },
+
+    //carrega o botao do watsapp
+    carregarBotaoWatsapp: () => {
+
+        var texto = 'Olá! gostaria de fazer uma *pergunta*';
+
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+       $("#botao-watsapp").attr('href', URL);
+
+    },
+
+     //carrega o botao do watsapp2
+     carregarBotaoWatsapp2: () => {
+
+        var texto = 'Olá! gostaria de fazer uma *pergunta*';
+
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+       $("#botao-watsapp2").attr('href', URL);
+
+    },
 
 
 
@@ -563,7 +623,7 @@ cardapio.metodos = {
 cardapio.templates = {
 
     item: `
-         <div class="col-3 mb-5">
+         <div class="col-12 col-lg-3 col-md-3 col-sm-6 mb-5 animated fadeInUp">
             <div class="card card-item" id="\${id}">
                 <div class="img-produto">
                     <img
@@ -605,7 +665,7 @@ cardapio.templates = {
 
             <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></span>
 
-            <span class="btn btn-remove" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fas fa-times"></i></span>
+            <span class="btn btn-remove no-mobile" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fas fa-times"></i></span>
         </div>
         </div>
 ` ,
