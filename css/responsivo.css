@@ -1,27 +1,28 @@
 
-/*desktop (col-lg) 922 px + */
-@media (min-width: 922px) {
+/* Desktop (col-lg) 992px+ */
+@media (min-width: 992px) {
 
 }
 
-/*desktop e tablets (col-md) 768 px a 991px */
+/* Desktop e Tablets (col-md) 768px a 991px */
 @media (min-width: 768px) and (max-width: 991px) {
 
 }
 
-/*tablets (col-sm) 576 px a 767px */
+/* Tablets (col-sm) 576px a 767px */
 @media (min-width: 576px) and (max-width: 767px) {
 
 }
 
-/*tablets e celulares (col) 0 px a 767px */
+/* Tablets e Celulares (col) 0px a 767px */
 @media (max-width: 767px) {
 
     .no-mobile {
         display: none!important;
     }
+
     .col-one {
-        padding: 35px!important;
+        padding-left: 35px!important;
         padding-right: 35px!important;
     }
 
@@ -30,7 +31,7 @@
     }
 
     .navbar-collapse {
-        background-color: #f0daba;
+        background-color: var(--color-secondary);
         padding: 20px;
         text-align: center;
         border-radius: 40px;
@@ -38,7 +39,6 @@
 
     .navbar-collapse .btn-white {
         margin-top: 20px;
-        background-color: #cfba9a;
     }
 
     .navbar-collapse .btn-icon {
@@ -50,14 +50,14 @@
     }
 
     .banner {
-        padding-top: 40px;
+        padding-top: 50px;
         padding-bottom: 50px;
     }
 
     .text-banner h1 {
         font-size: 36px;
     }
-    
+
     .text-banner p {
         font-size: 18px;
     }
@@ -98,7 +98,7 @@
 
     .img-produto {
         position: absolute;
-        left: 15px;
+        left: 15px
     }
 
     .card-item {
@@ -122,10 +122,10 @@
     .price-produto {
         margin-bottom: 0px!important;
         margin-top: 0px!important;
-        font-size: 22px;
+        font-size: 22px!important;
     }
 
-    .card-item .add.carrinho {
+    .card-item .add-carrinho {
         margin-top: 5px;
     }
 
@@ -160,23 +160,10 @@
         justify-content: center;
     }
 
-    .botao-carrinho {
-        left: 360px;
-        top: 500px;
-        position:-ms-page;
-        justify-content: center;
-        z-index: 1;
-    }
-
     .modal-full {
-        padding: 40px 40px 250px 40px;
+        padding: 40px;
     }
 
-    .carrinho-vazio {
-        padding-right: 80px;
-    }
-
-    
     .modal-full .item-carrinho {
         padding-left: 0;
         padding-right: 0;
@@ -205,15 +192,8 @@
         padding: 2px 10px;
     }
 
-    .modal-full a {
-        margin-right: 40px;
+    .modal-full .form-control {
+        font-size: 16px;
     }
 
-
-    .modal-full .add-carrinho {
-        display: flex;
-        margin-right: 40px;
-        align-items: center;
-    }
-
- }
+}
