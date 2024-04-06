@@ -10,14 +10,14 @@
 
 
   :root {
-    --color-background: #fffdf7;
+    --color-background: #eee4cc;
     --color-black: #212121;
     --color-black-heavy: #000;
     --color-text: #4f4f4f;
     --color-text-out: #90908e;
     --color-primary: #ffbf00;
     --color--secundary: #fff2cc;
-    --color-white: #ffffff;
+    --color-white: #f8f2e1;
     --color-red: #e74c3c;
     --color-green: #2ecc71;
     --color-separate: #cccccc;
@@ -118,6 +118,11 @@
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
+.btn-yellow b {
+    color: var(--color-text);
+    font-size: 17px;
+}
+
 .btn-icon-left {
     padding-left: 70px;
 }
@@ -162,6 +167,42 @@
     top: 30px;
     right: 15px;
 }
+
+/* (inicio) criei essa tag para a logo ficar piscando       */
+
+.img-logo, .logo-footer, .btn-social {
+    display: inline-block;
+  }
+  
+  .img-logo, .logo-footer, .card-banner {
+    animation: blink 1s infinite;
+    transition: opacity 0.5s ease-in-out;
+    animation: blink 7s infinite;
+  }
+
+  .btn-social {
+
+    animation: blink 1s infinite;
+    transition: opacity 0.5s ease-in-out;
+    animation: blink 4s infinite;
+
+  }
+  
+  @keyframes blink {
+    90% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+  }
+
+/*  (fim)  criei essa tag para a logo ficar piscando       */
+
+
 .card {
     border-radius: 20px;
     padding: 15px 20px;
@@ -184,6 +225,10 @@
     color: var(--color-primary);
     right: 20px;
     bottom: 10px;
+}
+
+.card-item {
+    background: #f8e7bf;
 }
 
 .serviços {
